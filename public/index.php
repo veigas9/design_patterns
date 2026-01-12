@@ -2,7 +2,7 @@
 
 use Core\Creational\Builder\Conceitual\PhoneBuilder;
 use Core\Creational\Builder\Conceitual\SamsungPhone;
-
+use Core\Criational\Builder\Conceitual\PhoneCreator;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -16,7 +16,10 @@ $galaxyS20 = new PhoneBuilder(
     ]   
 );
 
-$galaxyS20->getPhone();
+// $galaxyS20->getPhone();
+
+$phoneCreator = new PhoneCreator($galaxyS20);
+$galaxyS20 = $phoneCreator->createPhone();
 
 
 
